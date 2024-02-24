@@ -1,0 +1,8 @@
+/dist
+node_modules
+
+/src/lib
+
+.vscode
+.eslintrc.cjs
+.prettierrc.cjs

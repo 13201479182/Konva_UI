@@ -1,0 +1,26 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "launch": {
+        "Print to console": {
+            "prefix": "v",
+            "body": [
+                "${BLOCK_COMMENT_START}",
+                " * @author: 刘汇源lwx188666",
+                " * @since: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+                " * ${TM_FILENAME}",
+                "${BLOCK_COMMENT_END}",
+                "<template>",
+                "    <div class=\"${1:contanier}\"></div>",
+                "</template>",
+                "",
+                "<script setup lang=\"ts\"></script>",
+                "",
+                "<style scoped></style>",
+                ""
+            ],
+            "description": "Log output to console"
+        }
+    }
+}
