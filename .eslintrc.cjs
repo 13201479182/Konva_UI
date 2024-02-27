@@ -2,9 +2,6 @@
  * 任何语言通用规则
  */
 const commonRules = {
-    // 将prettier作为插件使用,提示报警信息
-    'prettier/prettier': 1,
-
     'for-direction': 2,
     'getter-return': 2,
     'no-async-promise-executor': 2,
@@ -119,6 +116,28 @@ const vueRules = {
     'vue/singleline-html-element-content-newline': 0,
     'vue/html-indent': 0,
     'vue/multi-word-component-names': 0,
+    'vue/html-indent': [
+        1,
+        'tab',
+        {
+            attribute: 1,
+            baseIndent: 1,
+            closeBracket: 0,
+            alignAttributesVertically: true,
+            ignores: [],
+        },
+    ],
+    'vue/html-closing-bracket-newline': [
+        1,
+        {
+            singleline: 'never',
+            multiline: 'never',
+            selfClosingTag: {
+                singleline: 'never',
+                multiline: 'always',
+            },
+        },
+    ],
 };
 
 module.exports = {
@@ -128,7 +147,7 @@ module.exports = {
         // js & cjs 文件处理
         {
             files: ['*.js', '*.cjs'],
-            rules: Object.assign({}, commonRules, jsRules),
+            rules: Object.assign({ 'prettier/prettier': 1 }, commonRules, jsRules),
             parserOptions: {
                 ecmaVersion: 'latest',
                 sourceType: 'module',
@@ -139,7 +158,7 @@ module.exports = {
         // ts 文件处理
         {
             files: ['*.ts'],
-            rules: Object.assign({}, commonRules, tsRules),
+            rules: Object.assign({ 'prettier/prettier': 1 }, commonRules, tsRules),
             parser: '@typescript-eslint/parser',
             parserOptions: {
                 ecmaVersion: 'latest',
@@ -151,7 +170,7 @@ module.exports = {
         {
             files: ['*.vue'],
             extends: ['plugin:vue/vue3-recommended'],
-            rules: Object.assign({}, commonRules, vueRules),
+            rules: Object.assign(vueRules, commonRules, tsRules),
             parser: 'vue-eslint-parser',
             parserOptions: {
                 parser: '@typescript-eslint/parser',

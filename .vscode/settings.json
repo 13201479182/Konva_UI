@@ -1,7 +1,41 @@
-{
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+{   
+    "files.exclude": {
+        ".vscode": true,
+        ".editorconfig": true,
+        ".npmrc": true,
+        "package-lock.json": true,
+        ".prettierignore": true,
+        ".gitignore": true,
+        ".prettierrc.cjs": true,
+        ".eslintrc.cjs": true,
+        ".eslintignore": true,
+        "tsconfig.json": true,
+    },
+
     "editor.formatOnSave": true,
     "files.autoSave": "onFocusChange",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+    // eslint相关配置
+    "eslint.enable": true,
+    "eslint.probe": [
+        "javascript",
+        "typescript",
+        "vue",
+        "markdown"
+    ],
+
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // 代码片段配置
     "launch": {
         "Print to console": {
             "prefix": "v",

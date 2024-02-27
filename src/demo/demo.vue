@@ -4,13 +4,16 @@
  * test.vue
 -->
 <template>
-    <div class="contanier">demo</div>
+    <div ref="container" class="contanier" tt="1">demo</div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 import Konva from '@konva';
 
-// console.log(Konva);
+const container = ref<HTMLDivElement | null>(null);
+console.log(Konva);
 </script>
 
 <style scoped></style>
