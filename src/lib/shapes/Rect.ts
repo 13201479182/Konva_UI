@@ -47,7 +47,7 @@ export class Rect extends Shape<RectConfig> {
         context.fillStrokeShape(this);
     }
 
-    cornerRadius: GetSet<number | number[], this>;
+    cornerRadius!: GetSet<number | number[], this>;
 }
 
 Rect.prototype.className = 'Rect';

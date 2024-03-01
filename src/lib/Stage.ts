@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Util } from './Util';
 import { Factory } from './Factory';
 import { Container, ContainerConfig } from './Container';

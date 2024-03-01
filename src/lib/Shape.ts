@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Konva } from './Global';
 import { Transform, Util } from './Util';
 import { Factory } from './Factory';

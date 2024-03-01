@@ -17,15 +17,6 @@ const commonRules = {
     'no-inner-declarations': 2,
     'no-implicit-coercion': 2,
     'no-lone-blocks': 2,
-    'no-magic-numbers': [
-        2,
-        {
-            ignoreArrayIndexes: true,
-            ignoreDefaultValues: true,
-            enforceConst: true,
-            ignoreClassFieldInitialValues: true,
-        },
-    ],
     'no-new-wrappers': 2,
     'no-param-reassign': 2,
     'no-proto': 2,

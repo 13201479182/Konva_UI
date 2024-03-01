@@ -1,4 +1,4 @@
-{   
+{
     "files.exclude": {
         ".vscode": true,
         ".editorconfig": true,
@@ -9,7 +9,7 @@
         ".prettierrc.cjs": true,
         ".eslintrc.cjs": true,
         ".eslintignore": true,
-        "tsconfig.json": true,
+        "tsconfig.json": true
     },
 
     "editor.formatOnSave": true,
@@ -18,12 +18,7 @@
 
     // eslint相关配置
     "eslint.enable": true,
-    "eslint.probe": [
-        "javascript",
-        "typescript",
-        "vue",
-        "markdown"
-    ],
+    "eslint.probe": ["javascript", "typescript", "vue", "markdown"],
 
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

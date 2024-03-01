@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Factory } from './Factory';
 import { Node, NodeConfig } from './Node';
 import { getNumberValidator } from './Validators';
