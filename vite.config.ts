@@ -9,9 +9,8 @@ export default defineConfig({
 
     resolve: {
         alias: {
-            '@': resolve(process.cwd(), './src'),
-            '@konva': resolve(process.cwd(), './src/lib'),
-            '@demo': resolve(process.cwd(), './src/demo'),
+            '@views': resolve(process.cwd(), './src/views'),
+            '@konva-ui': resolve(process.cwd(), './package'),
         },
     },
 });

@@ -8,7 +8,7 @@ const routes = [
     // demo
     {
         path: '/demo',
-        component: () => import('@demo/demo.vue'),
+        component: () => import('@views/demo.vue'),
         meta: {
             name: 'Demo',
         },

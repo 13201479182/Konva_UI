@@ -1,10 +1,29 @@
 {
-    "references": [
-        {
-            "path": "./tsconfig.web.json"
-        },
-        {
-            "path": "./tsconfig.node.json"
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "useDefineForClassFields": true,
+        "moduleResolution": "Node",
+        "strict": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": ["ESNext", "DOM"],
+        "skipLibCheck": true,
+        "baseUrl": "./",
+        "paths": {
+          "@views/*": ["./src/views/*"],
+          "@konva-ui": ["./package/index.ts"]
         }
-    ]
+    },  
+    "include": [
+        "package/**/*.ts",
+        "package/**/*.d.ts",
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.vue",
+    ],
+    "compileOnSave": true,
+    "references": [{ "path": "./tsconfig.node.json" }]
 }

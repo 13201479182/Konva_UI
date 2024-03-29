@@ -1,7 +1,8 @@
 /**
- * 任何语言通用规则
+ * js 代码规则制定(https://eslint.org/docs/latest/rules)
+ * 针对js语法规则
  */
-const commonRules = {
+const jsRules = {
     'for-direction': 2,
     'getter-return': 2,
     'no-async-promise-executor': 2,
@@ -61,13 +62,7 @@ const commonRules = {
     ],
     'constructor-super': 2,
     'prefer-rest-params': 2,
-};
 
-/**
- * js 代码规则制定(https://eslint.org/docs/latest/rules)
- * 针对js语法规则
- */
-const jsRules = {
     'no-redeclare': 2,
     'no-unused-vars': 2,
     'no-use-before-define': 2,
@@ -109,7 +104,7 @@ const vueRules = {
     'vue/multi-word-component-names': 0,
     'vue/html-indent': [
         1,
-        'tab',
+        4,
         {
             attribute: 1,
             baseIndent: 1,
@@ -138,7 +133,9 @@ module.exports = {
         // js & cjs 文件处理
         {
             files: ['*.js', '*.cjs'],
-            rules: Object.assign({ 'prettier/prettier': 1 }, commonRules, jsRules),
+            rules: {
+                ...jsRules,
+            },
             parserOptions: {
                 ecmaVersion: 'latest',
                 sourceType: 'module',
@@ -148,11 +145,15 @@ module.exports = {
 
         // ts 文件处理
         {
-            files: ['*.ts'],
-            rules: Object.assign({ 'prettier/prettier': 1 }, commonRules, tsRules),
+            files: ['src/**/*.ts', 'package/**/*.ts', 'vite.config.ts'],
+            rules: {
+                ...jsRules,
+                ...tsRules,
+            },
             parser: '@typescript-eslint/parser',
             parserOptions: {
                 ecmaVersion: 'latest',
+                sourceType: 'module',
             },
             plugins: ['@typescript-eslint', 'prettier'],
         },
@@ -161,12 +162,17 @@ module.exports = {
         {
             files: ['*.vue'],
             extends: ['plugin:vue/vue3-recommended'],
-            rules: Object.assign(vueRules, commonRules, tsRules),
+            rules: {
+                ...jsRules,
+                ...tsRules,
+                ...vueRules,
+            },
             parser: 'vue-eslint-parser',
             parserOptions: {
                 parser: '@typescript-eslint/parser',
                 ecmaVersion: 'latest',
                 sourceType: 'module',
+                extraFileExtensions: ['.vue'],
             },
         },
     ],

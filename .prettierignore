@@ -1,8 +1,2 @@
 /dist
 /node_modules
-
-# .eslintrc.cjs
-.prettierrc.cjs
-
-package.json
-package-lock.json

@@ -1,16 +1,11 @@
-<!--
- * @author: 刘汇源lwx188666
- * @since: 2024-02-24
- * demo.vue
--->
 <template>
-    <div ref="container" class="container">demo</div>
+    <div ref="container" class="a" ass="1212">demo</div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import Konva from 'konva';
 
-import Konva from '@konva';
+import { onMounted, ref } from 'vue';
 
 type StageInstance = InstanceType<typeof Konva.Stage>;
 type LayerInstance = InstanceType<typeof Konva.Layer>;
@@ -38,20 +33,16 @@ function initLayer(stage: StageInstance) {
     createRect(layer);
 }
 
+const container = ref<HTMLDivElement | null>(null);
 onMounted(() => {
-    // 创建舞台
-    const stage = new Konva.Stage({
-        container: '.container',
-        width: 500,
-        height: 500,
-    });
-    initLayer(stage);
+    if (container.value) {
+        // 创建舞台
+        const stage = new Konva.Stage({
+            container: container.value,
+            width: document.body.clientWidth,
+            height: document.body.clientHeight,
+        });
+        initLayer(stage);
+    }
 });
 </script>
-
-<style scoped>
-.container {
-    width: 500px;
-    height: 500px;
-}
-</style>
