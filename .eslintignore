@@ -4,3 +4,5 @@ node_modules
 .vscode
 .eslintrc.cjs
 .prettierrc.cjs
+
+*/**/*.d.ts
